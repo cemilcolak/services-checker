@@ -22,7 +22,7 @@ chmod +x /your/path/to/scripts/restart-services
 ```
 #check on services
 */1 *  * * * /your/path/to/scripts/restart-services
-
+* * * * * /root/services-checker/restart-services >> /var/log/cron/restart-services.log 2>&1; echo "\n" >> /var/log/cron/restart-services.log
 ```
 
 The script will check the status of each service. If the service is stopped, it tries to restart the service. If the service starts, it sends you an email saying the service stopped but was restarted.

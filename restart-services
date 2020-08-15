@@ -48,6 +48,7 @@ SERVICES=( 'apache2' 'mysql' )
     MESSAGE="$i was down, but I was able to restart it on $(hostname) $(date)  "
     SUBJECT="$i was down -but restarted-  on $(hostname) $(date) "
     echo $MESSAGE | mail -s "$SUBJECT" "$EMAIL"
+    echo $MESSAGE
 
    else
     ##IF RESTART DID NOT WORK###
@@ -62,6 +63,7 @@ SERVICES=( 'apache2' 'mysql' )
      MESSAGE="$i is down on $(hostname)  at $(date)  "
      SUBJECT=" $i  down on $(hostname) $(date) "
      echo $MESSAGE  " I tried to restart it, but it did not work"  | mail -s "$SUBJECT" "$EMAIL"
+     echo $MESSAGE
     fi
   fi
  fi
